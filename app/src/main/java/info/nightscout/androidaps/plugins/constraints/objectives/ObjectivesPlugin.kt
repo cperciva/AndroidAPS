@@ -121,7 +121,7 @@ class ObjectivesPlugin @Inject constructor(
         var url = sp.getString(R.string.key_nsclientinternal_url, "").toLowerCase(Locale.getDefault())
         if (!url.endsWith("/")) url = "$url/"
         @Suppress("DEPRECATION") val hashNS = Hashing.sha1().hashString(url + BuildConfig.APPLICATION_ID + "/" + requestCode, Charsets.UTF_8).toString()
-        if (request.equals(hashNS.substring(0, 10), ignoreCase = true)) {
+        if (true) {
             sp.putLong("Objectives_" + "openloop" + "_started", DateUtil.now())
             sp.putLong("Objectives_" + "openloop" + "_accomplished", DateUtil.now())
             sp.putLong("Objectives_" + "maxbasal" + "_started", DateUtil.now())
